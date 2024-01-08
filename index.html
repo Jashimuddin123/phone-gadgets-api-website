@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Daisy UI Link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- header section -->
+    <header class="mt-8">
+<!-- nav section -->
+<div class="navbar bg-base-100  mx-auto py-6 rounded bg-green-500  flex flex-col md:flex-row">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        </ul>
+      </div>
+      <a class="btn btn-ghost  text-red-700 text-4xl">Mobile Gadgets</a>
+    </div>
+
+    <div class="navbar-end gap-5 flex flex-col md:flex-row">
+      <a href="blog.html" class="btn bg-red-700 text-white">Blog file</a>
+      <a class="btn  bg-red-700 text-white">Sign In</a>
+    </div>
+  </div>
+           <!--  Hero section -->
+           <div class="hero min-h-screen" style="background-image: url(./images/photo-1584438784894-089d6a62b8fa.avif);">
+            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-md">
+                <h1 class="mb-5 text-3xl font-bold"> <span class="text-red-500 text-5xl">Apple </span>Iphone 13 Pro Max</h1>
+                <p class="mb-2">You can purchase iPhone through apple.com, or at an Apple Store. · How to Purchase. First, choose your iPhone model, and then choose a carrier </p>
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+    </header>
+    <!-- main container -->
+    <main class="container mx-auto">
+       <!--  Surch Your Phone Section -->
+        <section class="text-center mt-10 mb-6 p-4 rounded">
+            <h1 class="text-4xl text-red-500 font-bold mb-4">Search your phone</h1>
+            <div>
+                <input id="input-field" type="text" placeholder="Surch here...." class="input input-bordered w-full max-w-xs  bg-black text-white" />
+                <button onclick="searchHandle()" class="btn btn-primary">Search</button>
+            </div>
+         
+        </section>
+         <!-- loadding Section -->
+         <section>
+          <div class=" text-center mt-14 mb-14 hidden " id="loading-spiner">
+            <span class="loading loading-spinner loading-md"></span>
+          </div>
+      </section>
+         <section>
+            <!-- card container -->
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="phone-container">
+                    
+                 </div>
+
+                 <!-- show all button  -->
+
+                  <div id="display-phone" class="hidden text-center mt-2 mb-10">
+                    <button onclick="handleShowAll()" class="btn btn-error text-white">Show All</button>
+                  </div>
+         </section>
+
+         <!-- shoaw deatails modal  -->
+          <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="show_details_modal.showModal()">open modal</button> -->
+<dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 id="show-phone-name" class="font-bold text-lg"></h3>
+     <div id="showDetails-phone-container">
+   
+     </div>
+   
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+    </main>
+    <!-- footer section -->
+
+ <section>
+  <footer class="footer p-10 bg-green-700 text-base-content text-white">
+    <nav>
+      <header class="footer-title">Services</header> 
+      <a class="link link-hover">Branding</a>
+      <a class="link link-hover">Design</a>
+      <a class="link link-hover">Marketing</a>
+      <a class="link link-hover">Advertisement</a>
+    </nav> 
+    <nav>
+      <header class="footer-title">Company</header> 
+      <a class="link link-hover">About us</a>
+      <a class="link link-hover">Contact</a>
+      <a class="link link-hover">Jobs</a>
+      <a class="link link-hover">Press kit</a>
+    </nav> 
+    <nav>
+      <header class="footer-title">Legal</header> 
+      <a class="link link-hover">Terms of use</a>
+      <a class="link link-hover">Privacy policy</a>
+      <a class="link link-hover">Cookie policy</a>
+    </nav> 
+    <form>
+      <header class="footer-title">Newsletter</header> 
+      <fieldset class="form-control w-80">
+        <label class="label">
+          <span class="label-text text-white">Enter your email address</span>
+        </label> 
+        <div class="join">
+          <input type="text" placeholder="adnanmahmud3394@gmail.com" class="input input-bordered join-item text-black" /> 
+          <button class="btn btn-primary join-item">Subscribe</button>
+        </div>
+      </fieldset>
+     
+    </form>
+    
+  </footer>
+  <div>
+    
+    <div class="footer footer-center p-4 bg-green-700 text-white">
+      <aside>
+        <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+      </aside>
+    </div>
+  </div>
+ </section>
+    
+    <!-- srcipts file -->
+    <script src="./scripts/phone.js"></script>
+</body>
+</html>
